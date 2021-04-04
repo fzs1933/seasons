@@ -1,11 +1,8 @@
-//
-// Name: Nyár
+// Name: Seasons - Summer
 // Author: Fejes Zsolt
-// Version: 1.0
-// License: Public Domain
-// Description: A nyári éjszaka csodái
+// Description: Wonders of summer nights
 
-//Idő, hely, felszín, légkör
+//Environment setup
 	core.setDate("2021-06-21T00:00:01", "local", true);
 	core.setObserverLocation("N 47:25:42.23", "E 18:36:15.48");
 	core.getMountMode ("azimuthal")
@@ -96,7 +93,6 @@
 	ConstellationMgr.setFlagLines(false);
 	ConstellationMgr.setFlagArt(false);
 	
-
 //Sagittarius
 	core.selectConstellationByName("Sagittarius");
 	LabelMgr.deleteAllLabels(true);
