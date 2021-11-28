@@ -13,8 +13,7 @@ LandscapeMgr.setAtmosphereFadeDuration(3);
 
 core.setDate("2021-03-20T0:0:00", "utc+1");
 LandscapeMgr.setCurrentLandscapeName("Ocean");
-core.setObserverLocation(0.00, 90.00, 5, 2, "Északi Sark");
-//core.setObserverLocation(0.0, 90.0, "Északi Sark");
+core.setObserverLocation(0.00, 90.00, 5, 2, "North Pole");
 core.moveToAltAzi (89,0, 5);
 StelMovementMgr.zoomTo(180, 4);
 
@@ -786,7 +785,7 @@ core.setDate("2022-03-21T1:00:00", "utc+1");
 core.wait(5);
 
 LandscapeMgr.setCurrentLandscapeName("Ocean");
-core.setObserverLocation(0.00, 1, 5, 10, "Egyenlítő");
+core.setObserverLocation(0.00, 0.01, 5, 10, "Equator");
 core.moveToAltAzi (89, 0, 5);
 StelMovementMgr.zoomTo(180, 4);
 
