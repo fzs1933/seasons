@@ -1,0 +1,2587 @@
+//BEVEZETŐ
+//alapbeállítások
+//városból fényszennyezésmentes ég alá
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+core.setDate("2021-04-21T4:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Urania Observatory Vienna");
+core.setBortleScaleIndex(8);
+core.wait(5);
+core.setTimeRate(120);
+core.setGuiVisible(false);
+core.moveToAltAzi (89,45,5);
+StelMovementMgr.zoomTo(180, 4);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.wait(10);
+core.moveToAltAzi (47,120,5);
+StelMovementMgr.zoomTo(120, 4);
+core.setBortleScaleIndex(8);
+core.setTimeRate(313);	
+core.wait(45);
+core.moveToAltAzi (47,180,5);
+core.setTimeRate(313);	
+core.wait(45);
+core.setTimeRate(1800);
+core.waitFor("2021-04-21T23:58:30", "local");
+core.setTimeRate(60);
+core.wait(29);
+core.setBortleScaleIndex(5);
+core.moveToAltAzi (47,90,5);
+LandscapeMgr.setCurrentLandscapeName("Lueneburg");
+core.wait(19);
+core.setBortleScaleIndex(3);
+core.moveToAltAzi (47,0,5);
+LandscapeMgr.setCurrentLandscapeName("Granholmstoppen (Winter)");
+core.wait(25);
+core.setBortleScaleIndex(1);
+core.moveToAltAzi (47,90,5);
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+LandscapeMgr.setFlagAtmosphere(true);
+core.wait(5);
+core.moveToAltAzi (89,180,5);
+StelMovementMgr.zoomTo(180, 4);
+LandscapeMgr.setFlagAtmosphere(false);
+core.wait(10);
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.setTimeRate(240);
+core.wait(20);
+core.setTimeRate(0);
+
+
+//CIRKUMPOLÁRIS CSILLAGKÉPEK
+//Alapbeállítás
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+StarMgr.setLabelsAmount(0);
+core.setDate("2021-03-21T00:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setBortleScaleIndex(1);
+core.setTimeRate(0);
+core.setGuiVisible(false);
+core.moveToAltAzi (89,45,5);
+StelMovementMgr.zoomTo(180, 4);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+
+//Északi pólus, Sarkcsillag
+
+core.moveToAltAzi (47,0,5);
+core.wait(5);
+GridLinesMgr.setFlagCelestialPoles(true);
+core.selectObjectByName("Polaris", pointer=false);
+core.wait(5);
+LabelMgr.labelObject("Sarkcsillag", "Polaris", true, fontSize=24, fontColor="#ff8900", side="S" );
+core.setTimeRate(720);
+core.wait(30);
+GridLinesMgr.setFlagCelestialPoles(true);
+StarMgr.setFlagLabels(false);
+LandscapeMgr.setFlagAtmosphere(true);
+core.setTimeRate(0);
+core.wait(10);
+core.setTimeRate(-1440);
+core.wait(15);
+core.setTimeRate(0);
+core.wait(10);
+
+//Zenit, nadír, északi sark, egyenlítő, magassági vonalak
+
+LandscapeMgr.setFlagAtmosphere(false);
+GridLinesMgr.setFlagMeridianLine(true);
+GridLinesMgr.setFlagMeridianParts(true);
+GridLinesMgr.setFlagZenithNadir(true);
+LandscapeMgr.setCurrentLandscapeName("Ocean");
+GridLinesMgr.setFlagHorizonLine(true);
+core.selectObjectByName("Polaris", pointer=false);
+LabelMgr.labelObject("Sarkcsillag", "Polaris", true, fontSize=24, fontColor="#ff8900", side="S" );
+core.setObserverLocation("Egyenlito, Hungary", duration="5");
+core.wait(10);
+core.setObserverLocation("Eszaki sark, Hungary", duration="5");
+core.wait(10);
+core.setObserverLocation("Home, Hungary", duration="5");
+core.wait(10);
+GridLinesMgr.setFlagMeridianLine(false);
+GridLinesMgr.setFlagMeridianParts(false);
+GridLinesMgr.setFlagZenithNadir(true);
+GridLinesMgr.setFlagHorizonLine(true);
+core.moveToAltAzi (47,0,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+
+//Cirkumpoláris kör és a benne lévő csillagképek
+
+LandscapeMgr.setFlagAtmosphere(false);
+GridLinesMgr.setFlagZenithNadir(true);
+GridLinesMgr.setFlagCircumpolarCircles(true);
+core.wait(5);
+LandscapeMgr.setCurrentLandscapeName("Ocean");
+core.setObserverLocation("Egyenlito, Hungary", duration="5");
+core.wait(10);
+core.setObserverLocation("Eszaki sark, Hungary", duration="5");
+core.wait(10);
+core.setObserverLocation("Home, Hungary", duration="5");
+core.wait(10);
+GridLinesMgr.setFlagCelestialPoles(false);
+core.selectObjectByName("");
+LabelMgr.deleteAllLabels(true);
+GridLinesMgr.setFlagZenithNadir(false);
+GridLinesMgr.setFlagHorizonLine(false);
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.moveToAltAzi (47,0,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(5);
+core.selectConstellationByName("Ursa Minor");
+core.selectConstellationByName("Ursa Major");
+core.selectConstellationByName("Draco");
+core.selectConstellationByName("Camelopardalis");
+core.selectConstellationByName("Cepheus");
+core.selectConstellationByName("Cassiopeia");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(10);
+GridLinesMgr.setFlagCelestialPoles(false);
+LabelMgr.deleteAllLabels(true);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+GridLinesMgr.setFlagCircumpolarCircles(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(5);
+
+StarMgr.setLabelsAmount(4);
+StarMgr.setFlagLabels(true);
+core.wait(5);
+StarMgr.setLabelsAmount(0);
+
+//Ursa Minor
+
+core.selectConstellationByName("Ursa Minor");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50,10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Polaris");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.moveToAltAzi (47,0,5);
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(15);
+
+//Ursa Major
+
+core.selectConstellationByName("Ursa Major");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Mizar");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M101");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M97");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M82");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M81");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(15);
+
+//Draco
+
+core.selectConstellationByName("Draco");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("NGC6543");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(0.1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(15);
+
+//Camelopardalis
+
+core.selectConstellationByName("Camelopardalis");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("IC342");
+core.moveToSelectedObject(5);
+core.wait(5);
+StelMovementMgr.zoomTo(1, 10);
+core.wait(15);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(15);
+
+//Cepheus
+
+core.selectConstellationByName("Cepheus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("NGC7380");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC7023");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+core.selectObjectByName("IC1396");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+ConstellationMgr.deselectConstellations(true);
+
+//Cassiopeia
+
+core.selectConstellationByName("Cassiopeia");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M52");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC457");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC7789");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+ConstellationMgr.deselectConstellations(true);
+
+core.selectObjectByName("IC1805");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+ConstellationMgr.deselectConstellations(true);
+
+core.selectObjectByName("IC1848");
+StelMovementMgr.autoZoomIn(5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+ConstellationMgr.deselectConstellations(true);
+
+core.moveToAltAzi (47,0,5);
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.deselectConstellations(true);
+
+
+//TAVASZ
+//Alapbeállítás
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+core.setDate("2021-03-21T01:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setBortleScaleIndex(1);
+core.setTimeRate(0);
+core.setGuiVisible(false);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+
+//A tavaszi csillagképek egyben
+
+core.selectConstellationByName("Leo");
+core.selectConstellationByName("Virgo");
+core.selectConstellationByName("Hydra");
+core.selectConstellationByName("Crater");
+core.selectConstellationByName("Corvus");
+core.selectConstellationByName("Leo Minor");
+core.selectConstellationByName("Canes Venatici");
+core.selectConstellationByName("Coma Berenices");
+core.selectConstellationByName("Bootes");
+core.selectConstellationByName("Corona Borealis");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(10);
+LabelMgr.deleteAllLabels(true);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(5);
+core.setTimeRate(0);
+
+StarMgr.setLabelsAmount(4);
+StarMgr.setFlagLabels(true);
+core.wait(5);
+StarMgr.setLabelsAmount(0);
+
+//Leo
+
+core.selectConstellationByName("Leo");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Regulus");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M95");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M96");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M105");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M65");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M66");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC3628");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Virgo
+
+core.selectConstellationByName("Virgo");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Spica");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC4435");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(3, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M86");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M87");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M104");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.5, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Hydra
+
+core.selectConstellationByName("Hydra");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(70, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M48");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC3242");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Crater, Corvus
+
+core.selectConstellationByName("Crater");
+core.selectConstellationByName("Corvus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+//Leo Minor
+
+core.selectConstellationByName("Leo Minor");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Canes Venatici
+
+core.selectConstellationByName("Canes Venatici");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Cor Caroli");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M51");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M3");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M63");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M94");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M106");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(40, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Coma Berenices
+
+core.selectConstellationByName("Coma Berenices");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Mel111");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M64");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M53");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC4565");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Bootes
+
+core.selectConstellationByName("Bootes");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Arcturus");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Corona Borealis
+
+core.selectConstellationByName("Corona Borealis");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Gemma");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.moveToAltAzi (47,1800,5);
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.deselectConstellations(true);
+
+
+//napok
+core.setDate("2021-03-21T1:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-22T1:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-23T1:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-24T1:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-25T1:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-26T1:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-27T1:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-28T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-29T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-30T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-03-31T0:00:00", "local");
+core.wait(0.04);
+
+core.setDate("2021-04-01T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-02T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-03T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-04T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-05T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-06T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-07T00:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-08T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-09T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-10T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-11T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-12T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-13T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-14T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-15T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-16T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-17T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-18T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-19T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-20T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-21T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-22T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-23T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-24T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-25T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-26T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-27T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-28T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-29T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-04-30T0:00:00", "local");
+core.wait(0.04);
+
+core.setDate("2021-05-01T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-02T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-03T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-04T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-05T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-06T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-07T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-08T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-09T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-10T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-11T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-12T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-13T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-14T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-15T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-16T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-17T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-18T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-19T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-20T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-21T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-22T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-23T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-24T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-25T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-26T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-27T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-28T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-29T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-30T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-05-31T0:00:00", "local");
+core.wait(0.04);
+
+core.setDate("2021-06-01T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-02T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-03T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-04T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-05T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-06T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-07T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-08T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-09T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-10T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-11T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-12T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-13T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-14T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-15T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-16T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-17T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-18T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-19T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-20T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-21T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-22T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-23T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-24T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-25T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-26T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-27T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-28T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-29T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-06-30T0:00:00", "local");
+core.wait(0.04);
+
+core.setDate("2021-07-01T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-02T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-03T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-04T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-05T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-06T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-07T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-08T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-09T0:00:00", "local");
+core.wait(0.04);
+core.setDate("2021-07-10T0:00:00", "local");
+core.wait(0.04);
+
+//NYÁR
+//Alapbeállítás - nyár
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+core.setDate("2021-07-10T00:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setBortleScaleIndex(1);
+core.setTimeRate(0);
+core.setGuiVisible(false);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+
+//NYÁR
+//Alapbeállítás - nyár
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+core.setDate("2021-07-10T00:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setBortleScaleIndex(1);
+core.setTimeRate(0);
+core.setGuiVisible(false);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+
+//A nyári csillagképek egyben
+
+core.selectConstellationByName("Libra");
+core.selectConstellationByName("Scorpius");
+core.selectConstellationByName("Sagittarius");
+core.selectConstellationByName("Ophiuchus");
+core.selectConstellationByName("Hercules");
+core.selectConstellationByName("Lyra");
+core.selectConstellationByName("Cygnus");
+core.selectConstellationByName("Sagitta");
+core.selectConstellationByName("Delphinus");
+core.selectConstellationByName("Equus");
+core.selectConstellationByName("Scutum");
+core.selectConstellationByName("Vulpecula");
+core.selectConstellationByName("Aquila");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(10);
+LabelMgr.deleteAllLabels(true);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(5);
+core.setTimeRate(0);
+
+StarMgr.setLabelsAmount(4);
+StarMgr.setFlagLabels(true);
+core.wait(5);
+StarMgr.setLabelsAmount(0);
+
+//Libra
+
+core.selectConstellationByName("Libra");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Scorpius
+
+core.selectConstellationByName("Scorpius");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Antares");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(3, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M4");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M6");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Sagittarius
+
+core.selectConstellationByName("Sagittarius");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(70, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M8");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M20");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M24");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(3, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M17");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M22");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//bolygók
+
+//Alapbeállítás - bolygók
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+core.setDate("2016-02-08T07:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setBortleScaleIndex(1);
+core.setTimeRate(0);
+core.setGuiVisible(false);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+LandscapeMgr.setFlagAtmosphere(false);
+LandscapeMgr.setAtmosphereFadeDuration(5);
+SolarSystem.setFlagPlanets(true);
+SolarSystem.setLabelsAmount(0);
+
+//bolygók
+
+core.selectObjectByName("Mercury");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.01, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("Venus");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.01, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("Saturn");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.025, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("Mars");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.01, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("Jupiter");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.025, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false)
+ConstellationMgr.deselectConstellations(true);
+
+
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 5);
+core.setDate("2021-07-10T00:00:00", "local");
+LandscapeMgr.setFlagAtmosphere(false);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//Ophiuchus
+
+core.selectConstellationByName("Ophiuchus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(120, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M10");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M16");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false)
+ConstellationMgr.deselectConstellations(true);
+
+//Hercules
+
+core.selectConstellationByName("Hercules");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M92");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M13");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false)
+ConstellationMgr.deselectConstellations(true);
+
+//Lyra
+
+core.selectConstellationByName("Lyra");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Vega");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M57");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("M56");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Cygnus
+
+core.selectConstellationByName("Cygnus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Deneb");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC7000");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC6992");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC6960");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Sagitta
+
+core.selectConstellationByName("Sagitta");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Delphinus
+
+core.selectConstellationByName("Delphinus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Equus
+
+core.selectConstellationByName("Equus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Vulpecula
+
+core.selectConstellationByName("Vulpecula");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M27");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Aquila
+
+core.selectConstellationByName("Aquila");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Altair");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(20, 5);
+core.wait(5);
+
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.deselectConstellations(true);
+
+//ŐSZ
+//Alapbeállítás
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+core.setDate("2021-10-02T00:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setBortleScaleIndex(1);
+core.setTimeRate(0);
+core.setGuiVisible(false);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+
+//Az őszi csillagképek egyben
+
+core.selectConstellationByName("Capricornus");
+core.selectConstellationByName("Aquarius");
+core.selectConstellationByName("Pisces");
+core.selectConstellationByName("Aries");
+core.selectConstellationByName("Pegasus");
+core.selectConstellationByName("Andromeda");
+core.selectConstellationByName("Triangulum");
+core.selectConstellationByName("Perseus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(10);
+LabelMgr.deleteAllLabels(true);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(5);
+core.setTimeRate(0);
+
+StarMgr.setLabelsAmount(4);
+StarMgr.setFlagLabels(true);
+core.wait(5);
+StarMgr.setLabelsAmount(0);
+
+//Capricornus
+
+core.selectConstellationByName("Capricornus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M30");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Aquarius
+
+core.selectConstellationByName("Aquarius");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("NGC7009");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC7293");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Pisces
+
+core.selectConstellationByName("Pisces");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M74");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//Ekliptika, állatöv
+
+LandscapeMgr.setFlagLandscape(false);
+LandscapeMgr.setFlagAtmosphere(false);
+StelMovementMgr.zoomTo(220, 4);
+core.moveToAltAzi (42,327,5);
+GridLinesMgr.setFlagEclipticLine(true);
+core.wait(5);
+core.selectConstellationByName("Aries");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Taurus");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Gemini");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Cancer");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Leo");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Virgo");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Libra");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Scorpius");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Sagittarius");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Capricornus");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Aquarius");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Pisces");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(2);
+core.selectConstellationByName("Ophiuchus");
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(10);
+ConstellationMgr.deselectConstellations(true);
+GridLinesMgr.setFlagEclipticLine(false);
+StelMovementMgr.zoomTo(120, 4);
+core.moveToAltAzi (47,180,5);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setFlagLandscape(true);
+core.wait(5);
+
+//Aries
+
+core.selectConstellationByName("Aries");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//Pegasus
+
+core.selectConstellationByName("Pegasus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M15");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//Triangulum
+
+core.selectConstellationByName("Triangulum");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M33");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1.5, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//Andromeda
+
+core.selectConstellationByName("Andromeda");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M31");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2.5, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//Perseus
+
+core.selectConstellationByName("Perseus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M76");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.25, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC869");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//TÉL
+//Alapbeállítás
+
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+StarMgr.setLabelsAmount(0);
+core.setDate("2021-12-31T00:00:00", "local");
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setBortleScaleIndex(1);
+core.setTimeRate(0);
+core.setGuiVisible(false);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(3);
+LandscapeMgr.setFlagCardinalsPoints (false);
+core.getMountMode ("azimuthal");
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+core.wait(10);
+
+//A téli csillagképek egyben
+
+core.selectConstellationByName("Taurus");
+core.selectConstellationByName("Gemini");
+core.selectConstellationByName("Cancer");
+core.selectConstellationByName("Auriga");
+core.selectConstellationByName("Canis Minor");
+core.selectConstellationByName("Canis Major");
+core.selectConstellationByName("Monoceros");
+core.selectConstellationByName("Orion");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.wait(10);
+LabelMgr.deleteAllLabels(true);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(5);
+core.setTimeRate(0);
+
+StarMgr.setLabelsAmount(4);
+StarMgr.setFlagLabels(true);
+core.wait(5);
+StarMgr.setLabelsAmount(0);
+
+//Taurus
+
+core.selectConstellationByName("Taurus");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Mel25");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(4, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("Aldebaran");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M45");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1.5, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M1");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.5, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Gemini
+
+core.selectConstellationByName("Gemini");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Castor");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("Pollux");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M35");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC2158");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.5, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC2392");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(0.1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Cancer
+
+core.selectConstellationByName("Cancer");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("M44");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M67");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Auriga
+
+core.selectConstellationByName("Auriga");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Capella");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M36");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M38");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M37");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Canis Minor
+
+core.selectConstellationByName("Canis Minor");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Procyon");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2.5, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Canis Major
+
+core.selectConstellationByName("Canis Major");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Sirius");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M41");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Monoceros
+
+core.selectConstellationByName("Monoceros");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("NGC2264");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC2237");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+//Orion
+
+core.selectConstellationByName("Orion");
+ConstellationMgr.setFlagIsolateSelected(true);
+ConstellationMgr.setFlagBoundaries(true);
+ConstellationMgr.setFlagLines(true);
+ConstellationMgr.setFlagLabels(true);
+ConstellationMgr.setFlagArt(true);
+core.moveToSelectedObject(10);
+core.wait(10);
+StelMovementMgr.zoomTo(50, 10);
+core.wait(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.setFlagArt(false);
+
+core.selectObjectByName("Betelgeuse");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("Rigel");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("IC434");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("NGC2024");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(1, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M78");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+core.selectObjectByName("M42");
+core.moveToSelectedObject(5);
+core.wait(3);
+StelMovementMgr.zoomTo(2, 5);
+core.wait(10);
+StelMovementMgr.zoomTo(5, 5);
+core.wait(5);
+
+StelMovementMgr.zoomTo(120, 5);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+
+core.moveToAltAzi (47,180,5);
+StelMovementMgr.zoomTo(120, 4);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.deselectConstellations(true);
+core.wait(10);
+
+//BEFEJEZÉS
+
+core.setTimeRate(0);
+StarMgr.setLabelsAmount(10);
+LandscapeMgr.setFlagAtmosphere(false);
+LandscapeMgr.setAtmosphereFadeDuration(10);
+ConstellationMgr.setFlagBoundaries(false);
+ConstellationMgr.setFlagLines(false);
+ConstellationMgr.setFlagArt(false);
+ConstellationMgr.setFlagLabels(false);
+ConstellationMgr.deselectConstellations(true);
+core.moveToAltAzi (89, 180, 5);
+StelMovementMgr.zoomTo(180, 4);
+LandscapeMgr.setCurrentLandscapeName("Altenwalder Heide Dark");
+core.setDate("2021-04-19T00:00:00", "local");
+core.setBortleScaleIndex(1);
+LandscapeMgr.setFlagAtmosphere(true);
+LandscapeMgr.setAtmosphereFadeDuration(10);
+StarMgr.setLabelsAmount(5);
+StelMovementMgr.zoomTo(180, 4);
+core.wait(10);
+core.setTimeRate(240);
+core.wait(30);
+core.setBortleScaleIndex(2);
+core.wait(5);
+core.setBortleScaleIndex(3);
+
+StarMgr.setLabelsAmount(3);
+LandscapeMgr.setCurrentLandscapeName("Granholmstoppen (Winter)");
+core.wait(15);
+core.setBortleScaleIndex(4);
+core.wait(5);
+core.setBortleScaleIndex(5);
+
+StarMgr.setLabelsAmount(2);
+LandscapeMgr.setCurrentLandscapeName("Lueneburg");
+core.wait(10);
+core.setBortleScaleIndex(6);
+core.wait(5);
+core.setBortleScaleIndex(7);
+core.wait(5);
+core.setBortleScaleIndex(8);
+
+StarMgr.setLabelsAmount(1);
+LandscapeMgr.setCurrentLandscapeName("Urania Observatory Vienna");
+StarMgr.setLabelsAmount(0);
+core.wait(240);
+core.setTimeRate(0);
